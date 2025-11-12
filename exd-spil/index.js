@@ -44,7 +44,8 @@ function moveDodgerRight() {
   const left = parseInt(leftNumbers, 10);
   const gameWidth = game.offsetWidth; // Få bredden af spilområdet
 
-  if (left < gameWidth - dodgerWidth) { // Sørg for at dodger ikke går ud af højre kant
+  if (left < gameWidth - dodgerWidth) {
+    // Sørg for at dodger ikke går ud af højre kant
     dodger.style.left = `${left + 30}px`;
     dodger.style.transform = "scaleX(+1)"; // Vend billedet horisontalt
     playSoundOnMovement();
@@ -58,7 +59,8 @@ function moveDodgerUp() {
   const bottom = parseInt(bottomNumbers, 10);
   const gameHeight = game.offsetHeight;
 
-  if (bottom < gameHeight - dodgerHeight) { // Sørg for at dodger ikke går ud af toppen
+  if (bottom < gameHeight - dodgerHeight) {
+    // Sørg for at dodger ikke går ud af toppen
     dodger.style.bottom = `${bottom + 30}px`;
     dodger.style.transform = "rotate(-90deg)"; // rotér billedet vertikalt
     playSoundOnMovement();

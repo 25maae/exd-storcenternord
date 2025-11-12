@@ -71,23 +71,21 @@ const fishInfo = [
   {
     fishName: "Oliver",
     fishColor: "blue",
-    fishAge: 4
+    fishAge: 4,
   },
   {
     fishName: "Tenna",
     fishColor: "yellow",
-    fishAge: 5
+    fishAge: 5,
   },
   {
     fishName: "Martin",
     fishColor: "green",
-    fishAge: 6
+    fishAge: 6,
   },
   {
     fishName: "Freja",
     fishColor: "orange og hvid",
-    fishAge: 4
-  }
+    fishAge: 4,
+  },
 ];
-
-
