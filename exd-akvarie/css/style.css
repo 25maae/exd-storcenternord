@@ -1,0 +1,298 @@
+/* ---------------------------------------------------------
+   Import af font
+--------------------------------------------------------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/* ---------------------------------------------------------
+   Root-variabler
+   - px: billedstørrelser, offsets
+   - farver + font
+--------------------------------------------------------- */
+:root {
+  --font-body: "Poppins", sans-serif;
+}
+
+/* ---------------------------------------------------------
+   Global reset
+--------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+.bg {
+  position: absolute;
+  inset: auto 0 0 0;
+  width: 100%;
+  height: 100%;
+  background: url(../img/background.png);
+  background-size: 100vw auto;
+  overflow: hidden;
+  background-position: center bottom;
+}
+
+.image-button {
+  position: relative;
+  display: inline-flex;
+  width: 300px;
+  top: 40vh;
+  left: 70%;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.image-button:hover {
+  transform: scale(1.05);
+}
+
+.image-button img {
+  max-width: 100%;
+  height: auto;
+}
+
+.image-button span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  font-size: 32px;
+}
+
+#fish-button {
+  left: 10%;
+  top: 55vh;
+}
+
+#extra-button {
+  left: 4%;
+  top: 10vh;
+}
+
+.bubble {
+  position: absolute;
+  bottom: -40vh;
+  width: 40px;
+  height: 40px;
+  z-index: 90;
+  animation: bubble-up 8s linear infinite;
+  cursor: pointer;
+}
+
+@keyframes bubble-up {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(-140vh) translateX(var(--drift));
+  }
+}
+
+.bubble:nth-child(1) {
+  animation-delay: 0s;
+  animation-duration: 16s;
+  left: 10%;
+  --drift: 20px;
+}
+
+.bubble:nth-child(2) {
+  animation-delay: 0s;
+  animation-duration: 14s;
+  left: 30%;
+  --drift: 40px;
+}
+.bubble:nth-child(3) {
+  animation-delay: 0s;
+  animation-duration: 12s;
+  left: 50%;
+  --drift: 27px;
+}
+.bubble:nth-child(4) {
+  animation-delay: 0s;
+  animation-duration: 18s;
+  left: 70%;
+  --drift: 74px;
+}
+.bubble:nth-child(5) {
+  animation-delay: 0s;
+  animation-duration: 10s;
+  left: 90%;
+  --drift: 13px;
+}
+
+.bubble:nth-child(6) {
+  animation-delay: 0s;
+  animation-duration: 16s;
+  left: 15%;
+  --drift: 20px;
+}
+
+.bubble:nth-child(7) {
+  animation-delay: 5s;
+  animation-duration: 14s;
+  left: 25%;
+  --drift: 40px;
+}
+.bubble:nth-child(8) {
+  animation-delay: 0s;
+  animation-duration: 12s;
+  left: 63%;
+  --drift: 20px;
+}
+.bubble:nth-child(9) {
+  animation-delay: 0s; /* gør boblen synlig med det samme */
+  animation-duration: 18s; /* gør boblen langsommere */
+  left: 87%; /* gør boblen mere til højre */
+  --drift: 70px; /* gør boblen mere til højre mens den svømmer*/
+}
+.bubble:nth-child(10) {
+  animation-delay: 0s;
+  animation-duration: 10s;
+  left: 96%;
+  --drift: 10px;
+}
+
+.image-skattekiste {
+  position: absolute;
+  width: 20px; /* gør kisten mindre */
+  max-width: 20vw; /* skalerer pænt på små/større skærme */
+  bottom: 16px; /* placeret nede */
+  left: 40px; /* placeret i venstre hjørne */
+  transform: none; /* fjern tidligere translate */
+  z-index: 3; /* sørg for den ligger over baggrunden */
+}
+
+.image-skattekiste img {
+  max-width: 1750%;
+  height: auto;
+}
+
+.pirat {
+  position: absolute;
+  bottom: 150px;
+  left: 300px;
+  transform: none;
+  position: absolute;
+  transform: none;
+  cursor: pointer;
+}
+
+.pirat img {
+  max-width: 100vw;
+  height: 90vh;
+}
+
+.image-bluefish {
+  position: absolute;
+  width: 20px; /* gør fisken mindre */
+  max-width: 20vw; /* skalerer pænt på små/større skærme */
+  bottom: 400px; /* placeret nede */
+  right: 150px; /* placeret i højre hjørne */
+  transform: none; /* fjern tidligere translate */
+  z-index: 3; /* sørg for den ligger over baggrunden */
+  animation: fish-swim 10s linear infinite;
+}
+
+@keyframes fish-swim {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+
+.image-bluefish img {
+  max-width: 600%; /* ændre str på fisken */
+  height: auto; /* bevar proportioner */
+}
+
+.image-yellowfish {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 30px;
+  left: 30px;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+  animation: image-yellowfish 10s linear infinite;
+}
+
+@keyframes image-yellowfish {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(2000px);
+  }
+}
+
+.image-yellowfish img {
+  max-width: 400%;
+  height: auto;
+}
+
+.image-greenfish {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 40px;
+  right: 160px;
+  transform: none;
+  z-index: 4;
+  animation: image-greenfish 17s linear infinite;
+}
+
+@keyframes image-greenfish {
+  0% {
+    transform: translateX(100px);
+  }
+  100% {
+    transform: translateX(-2000px);
+  }
+}
+.image-greenfish img {
+  max-width: 700%;
+  height: auto;
+}
+
+.image-nemofish {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 30px;
+  left: 30px;
+  transform: none;
+  z-index: 3;
+  top: 400px;
+  animation: image-nemofish 15s linear infinite;
+}
+
+@keyframes image-nemofish {
+  0% {
+    transform: translateX(-100px);
+  }
+  100% {
+    transform: translateX(2000px);
+  }
+}
+
+.image-nemofish img {
+  max-width: 580%;
+  height: auto;
+}
