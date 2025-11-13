@@ -14,17 +14,17 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-// lav den nu med skattekisten, når man hover over den så skal der afspilles en lyd af skattekisten der åbnes, med skattekiste-sounden
-function handleSkattekisteHover(event) {
+// lav den nu med skattekisten, når man klikker på den så skal der afspilles en lyd af skattekisten der åbnes, med skattekiste-sounden
+function handleSkattekisteClick(event) {
   const skattekisteSound = new Audio("sound/skattekiste-sound.mp3");
   skattekisteSound.play();
 }
 
 // venter med at hente js siden tilden hele html er loaded
 document.addEventListener("DOMContentLoaded", () => {
-  // Add hover handler to skattekiste
+  // Add click handler to skattekiste
   const skattekiste = document.getElementById("skattekiste");
-  skattekiste.addEventListener("mouseover", handleSkattekisteHover);
+  skattekiste.addEventListener("click", handleSkattekisteClick);
 });
 
 function playBtnClick(event) {
