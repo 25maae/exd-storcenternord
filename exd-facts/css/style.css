@@ -39,17 +39,34 @@ body {
   background-repeat: no-repeat;
 }
 
+.image-skattekiste {
+  position: absolute;
+  width: 20px; /* gør kisten mindre */
+  max-width: 20vw; /* skalerer pænt på små/større skærme */
+  bottom: 80px; /* placeret nede */
+  left: -45px; /* placeret i venstre hjørne */
+  transform: none; /* fjern tidligere translate */
+  z-index: 3; /* sørg for den ligger over baggrunden */
+}
+
+.image-skattekiste img {
+  max-width: 1750%;
+  height: auto;
+}
+
 .pirat {
   position: absolute;
-  bottom: 150px;
-  left: 300px;
-  z-index: 1;
+  bottom: 138px;
+  left: 245px;
+  transform: none;
+  position: absolute;
+  transform: none;
+  cursor: pointer;
 }
 
 .pirat img {
   max-width: 100vw;
   height: 90vh;
-  z-index: 1;
 }
 
 .image-fish {
