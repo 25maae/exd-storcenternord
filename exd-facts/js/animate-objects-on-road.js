@@ -81,22 +81,40 @@ document.addEventListener("DOMContentLoaded", () => {
   fishInfo.forEach((fish) => {
     const classMap = {
       "Gul kirurgfisk": "gul-kirurgfisk",
-      "Dværgkejserfisk": "dvaergkejserfisk",
-      "Paletkirurgfisk": "paletkirurgfisk",
-      "Klovnefisk": "klovnfisk",
-      "Pudsefisk": "pudsefisk",
+      Dværgkejserfisk: "dvaergkejserfisk",
+      Paletkirurgfisk: "paletkirurgfisk",
+      Klovnefisk: "klovnfisk",
+      Pudsefisk: "pudsefisk",
       "Hvidstrubet kirugfisk": "hvidstrubet-kirurgfisk",
-      "Pincetfisk": "pincetfisk",
-      "Sortbåndet kirugfisk": "sortbaandet-kirurgfisk"
+      Pincetfisk: "pincetfisk",
+      "Sortbåndet kirugfisk": "sortbaandet-kirurgfisk",
     };
-  
-  const className = classMap[fish.fishName];
 
-  // Tilføjer event listeners til hver bil baseret på data-strukturen
-  fishInfo.forEach((fish) => {
-    const fishDetails = classMap[fish.fishName];
-    if (fishDetails) {
-      document.querySelectorAll("#" + fishDetails).forEach((elem) => {
+    const className = classMap[fish.fishName];
+
+    // Tilføjer event listeners til hver bil baseret på data-strukturen
+    fishInfo.forEach((fish) => {
+      const fishDetails = classMap[fish.fishName];
+      if (fishDetails) {
+        document.querySelectorAll("#" + fishDetails).forEach((elem) => {
+          elem.addEventListener("click", () => {
+            const fishDetails = `
+        <strong>${fish.fishName}</strong><br>
+        Color: ${fish.fishColor}<br>
+        Location: ${fish.fishLocation}<br>
+        Length: ${fish.fishLength}<br>
+        Food: ${fish.fishFood}
+        `; // Opretter HTML tekst med fiskeoplysninger
+            // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra fishDetails
+            showTooltip(fishDetails);
+          });
+        });
+      }
+    }); // Lukker DOMContentLoaded
+
+    if (className) {
+      document.querySelectorAll("." + fish.fishName).forEach((elem) => {
+        // Vælger alle elementer med den givne className
         elem.addEventListener("click", () => {
           const fishDetails = `
         <strong>${fish.fishName}</strong><br>
@@ -105,35 +123,15 @@ document.addEventListener("DOMContentLoaded", () => {
         Length: ${fish.fishLength}<br>
         Food: ${fish.fishFood}
         `; // Opretter HTML tekst med fiskeoplysninger
-        // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra fishDetails
-        showTooltip(fishDetails);
-      })
-    });
-  }
-}); // Lukker DOMContentLoaded
-  
-  
-  if (className) {
-    document.querySelectorAll("." + fish.fishName).forEach((elem) => {
-      // Vælger alle elementer med den givne className
-      elem.addEventListener("click", () => {
-        const fishDetails = `
-        <strong>${fish.fishName}</strong><br>
-        Color: ${fish.fishColor}<br>
-        Location: ${fish.fishLocation}<br>
-        Length: ${fish.fishLength}<br>
-        Food: ${fish.fishFood}
-        `; // Opretter HTML tekst med fiskeoplysninger
-        // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra fishDetails
-        showTooltip(fishDetails);
+          // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra fishDetails
+          showTooltip(fishDetails);
+        });
       });
-    });
-  }});
+    }
+  });
 }); // Lukker DOMContentLoaded
 
 // Tilføj event listener til knappen for at navigere tilbage start siden
 document.getElementById("tilbage").addEventListener("click", function () {
   window.location.href = "../index-akvarie.html";
 });
-
-
