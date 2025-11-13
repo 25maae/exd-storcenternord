@@ -43,8 +43,8 @@ body {
   position: absolute;
   width: 20px; /* gør kisten mindre */
   max-width: 20vw; /* skalerer pænt på små/større skærme */
-  bottom: 16px; /* placeret nede */
-  left: 40px; /* placeret i venstre hjørne */
+  bottom: 35px; /* placeret nede */
+  left: -80px; /* placeret i venstre hjørne */
   transform: none; /* fjern tidligere translate */
   z-index: 3; /* sørg for den ligger over baggrunden */
 }
