@@ -69,6 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // Parameter: html - den tekst indeholdende html-tags som vi vil vise i tooltip'en
   function showTooltip(html) {
     if (tooltip) {
+      // Indsætter teksten i tooltippen
       tooltip.innerHTML = html; // Indsætter teksten i tooltip'en
       tooltip.classList.add("is-visible"); // Gør tooltip'en synlig med css klassen
       setTimeout(function () {
@@ -77,23 +78,38 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Tilføjer event listeners til hver bil baseret på data-strukturen
   fishInfo.forEach((fish) => {
+    const classMap = {
+      "Gul kirurgfisk": "gul-kirurgfisk",
+      "Dværgkejserfisk": "dvaergkejserfisk",
+      "Paletkirurgfisk": "paletkirurgfisk",
+      "Klovnefisk": "klovnfisk"
+    };
+  
+  const className = classMap[fish.fishName];
+
+  // Tilføjer event listeners til hver bil baseret på data-strukturen
+  if (className) {
     document.querySelectorAll("." + fish.className).forEach((elem) => {
       // Vælger alle elementer med den givne className
-      elem.addEventListener("mouseover", () => {
-        const fishDetails = `<strong>${fish.fishName}</strong><br>
+      elem.addEventListener("click", () => {
+        const fishDetails = `
+        <strong>${fish.fishName}</strong><br>
         Color: ${fish.fishColor}<br>
         Location: ${fish.fishLocation}<br>
         Length: ${fish.fishLength}<br>
-        Food: ${fish.fishFood}`; // Opretter HTML teksten med fiskeoplysninger
+        Food: ${fish.fishFood}
+        `; // Opretter HTML tekst med fiskeoplysninger
+        // ShowTooltip er en funktion fra tidligere, forventer en parameter som vi her henter fra fishDetails
         showTooltip(fishDetails);
       });
     });
-  });
-});
+  }});
+}); // Lukker DOMContentLoaded
 
 // Tilføj event listener til knappen for at navigere tilbage start siden
 document.getElementById("tilbage").addEventListener("click", function () {
   window.location.href = "../exd-akvarie/index.html";
 });
+
+
