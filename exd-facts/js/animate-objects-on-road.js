@@ -81,13 +81,13 @@ document.addEventListener("DOMContentLoaded", () => {
   fishInfo.forEach((fish) => {
     const classMap = {
       "Gul kirurgfisk": "gul-kirurgfisk",
-      Dværgkejserfisk: "dvaergkejserfisk",
-      Paletkirurgfisk: "paletkirurgfisk",
-      Klovnefisk: "klovnfisk",
-      Pudsefisk: "pudsefisk",
+      "Dværgkejserfisk": "dvaergkejserfisk",
+      "Paletkirurgfisk": "paletkirurgfisk",
+      "Klovnefisk": "klovnfisk",
+      "Pudsefisk": "pudsefisk",
       "Hvidstrubet kirugfisk": "hvidstrubet-kirurgfisk",
-      Pincetfisk: "pincetfisk",
-      "Sortbåndet kirugfisk": "sortbaandet-kirurgfisk",
+      "Pincetfisk": "pincetfisk",
+      "Sortbåndet kirugfisk": "sortbaandet-kirurgfisk"
     };
 
     const className = classMap[fish.fishName];
