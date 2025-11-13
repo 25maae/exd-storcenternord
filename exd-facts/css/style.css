@@ -58,9 +58,9 @@ body {
   grid-template-columns: repeat(3, 2fr);
   gap: 20px;
   cursor: pointer;
-  padding: 10px;
+  padding: 25px;
   z-index: 1000;
-  max-width: 1000px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
