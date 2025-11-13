@@ -79,7 +79,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Tilføjer event listeners til hver bil baseret på data-strukturen
   fishInfo.forEach((fish) => {
-    document.querySelectorAll("." + fish.className).forEach((elem) => { // Vælger alle elementer med den givne className
+    document.querySelectorAll("." + fish.className).forEach((elem) => {
+      // Vælger alle elementer med den givne className
       elem.addEventListener("mouseover", () => {
         const fishDetails = `<strong>${fish.fishName}</strong><br>
         Color: ${fish.fishColor}<br>
