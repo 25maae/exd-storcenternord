@@ -55,7 +55,7 @@ body {
 .image-fish {
   position: relative;
   display: grid;
-  grid-template-columns: repeat(2, 2fr);
+  grid-template-columns: repeat(3, 2fr);
   gap: 20px;
   cursor: pointer;
   padding: 10px;
