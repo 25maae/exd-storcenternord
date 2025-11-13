@@ -76,3 +76,116 @@ body {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.gul-kirurgfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 30px;
+  left: 10px;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+}
+
+.dvaergkejserfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 30px;
+  right: 60%;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+}
+
+.paletkirurgfisk {
+  position: absolute;
+  width: -10px;
+  max-width: 20vw;
+  bottom: 70px;
+  right: 10px;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+}
+
+.klovnfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 50px;
+  right: 30%;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+}
+
+.pudsefisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 20px;
+  right: 40%;
+  transform: none;
+  z-index: 3;
+  top: 180px;
+}
+
+.hvidstrubet-kirurgfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 1080px;
+  right: 70%;
+  transform: none;
+  z-index: 3;
+  top: 30px;
+}
+
+.pincetfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 20px;
+  right: 20%;
+  transform: none;
+  z-index: 3;
+  top: 180px;
+}
+
+.sortbaandet-kirurgfisk {
+  position: absolute;
+  width: 20px;
+  max-width: 20vw;
+  bottom: 20px;
+  right: 50%;
+  transform: none;
+  z-index: 3;
+  top: 180px;
+}
+
+.image-button {
+  position: relative;
+  display: inline-flex;
+  width: 100px;
+  top: 40vh;
+  left: 70%;
+  flex-direction: column;
+  align-items: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: transform 0.3s ease;
+  z-index: 100;
+}
+
+.image-button:hover {
+  transform: scale(1.05);
+}
+
+.image-button img {
+  max-width: 150%;
+  height: auto;
+}
