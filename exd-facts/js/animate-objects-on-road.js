@@ -1,5 +1,6 @@
 "use strict";
 
+// Opretter vores data-struktur med et array som indeholder JS objekter
 const fishInfo = [
   {
     fishName: "Gul kirurgfisk",
@@ -60,6 +61,36 @@ const fishInfo = [
     fishFood: "Alger",
   },
 ];
+
+// Venter med at køre JS koden indtil hele HTML-siden er indlæst
+document.addEventListener("DOMContentLoaded", () => {
+  const tooltip = document.getElementById("tooltip"); // Finder tooltip id og gemmer det i en variabel
+  // Funktion der viser tooltip med fiskeoplysninger
+  // Parameter: html - den tekst indeholdende html-tags som vi vil vise i tooltip'en
+  function showTooltip(html) {
+    if (tooltip) {
+      tooltip.innerHTML = html; // Indsætter teksten i tooltip'en
+      tooltip.classList.add("is-visible"); // Gør tooltip'en synlig med css klassen
+      setTimeout(function () {
+        tooltip.classList.remove("is-visible"); // Fjerner synligheds-klassen efter 8 sekunder
+      }, 8000);
+    }
+  }
+
+  // Tilføjer event listeners til hver bil baseret på data-strukturen
+  fishInfo.forEach((fish) => {
+    document.querySelectorAll("." + fish.className).forEach((elem) => { // Vælger alle elementer med den givne className
+      elem.addEventListener("mouseover", () => {
+        const fishDetails = `<strong>${fish.fishName}</strong><br>
+        Color: ${fish.fishColor}<br>
+        Location: ${fish.fishLocation}<br>
+        Length: ${fish.fishLength}<br>
+        Food: ${fish.fishFood}`; // Opretter HTML teksten med fiskeoplysninger
+        showTooltip(fishDetails);
+      });
+    });
+  });
+});
 
 // Tilføj event listener til knappen for at navigere tilbage start siden
 document.getElementById("tilbage").addEventListener("click", function () {
