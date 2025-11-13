@@ -104,7 +104,7 @@ body {
 
 .bubble:nth-child(1) {
   animation-delay: 0s;
-  animation-duration: 16s;
+  animation-duration: 17s;
   left: 10%;
   --drift: 20px;
 }
@@ -123,13 +123,13 @@ body {
 }
 .bubble:nth-child(4) {
   animation-delay: 0s;
-  animation-duration: 18s;
+  animation-duration: 20s;
   left: 70%;
   --drift: 74px;
 }
 .bubble:nth-child(5) {
   animation-delay: 0s;
-  animation-duration: 10s;
+  animation-duration: 8s;
   left: 90%;
   --drift: 13px;
 }
@@ -144,7 +144,7 @@ body {
 .bubble:nth-child(7) {
   animation-delay: 5s;
   animation-duration: 14s;
-  left: 25%;
+  left: 5%;
   --drift: 40px;
 }
 .bubble:nth-child(8) {
@@ -156,7 +156,7 @@ body {
 .bubble:nth-child(9) {
   animation-delay: 0s; /* gør boblen synlig med det samme */
   animation-duration: 18s; /* gør boblen langsommere */
-  left: 87%; /* gør boblen mere til højre */
+  left: 81%; /* gør boblen mere til højre */
   --drift: 70px; /* gør boblen mere til højre mens den svømmer*/
 }
 .bubble:nth-child(10) {
