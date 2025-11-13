@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Tilføj event listener til knappen for at navigere tilbage start siden
 document.getElementById("tilbage").addEventListener("click", function () {
-  window.location.href = "../exd-akvarie/index.html";
+  window.location.href = "../index.html";
 });
 
 
